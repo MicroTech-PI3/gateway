@@ -14,16 +14,19 @@ admin:
 apiEndpoints:
   api1:
     host: "*"
-    paths: "/factura/*"
+    paths: "/shopcart/*"
   api2:
     host: "*"
     paths: "/payment/*"
   api3:
     host: "*"
-    paths: "/billsender/"
-  api:
+    paths: "/billsender/*"
+  api4:
     host: "*"
-    paths: "/*"
+    paths: "/products/*"
+  api5:
+    host: "*"
+    paths: "/suppliers/*"
 
 serviceEndpoints:
   backFacturacionService:
@@ -32,6 +35,8 @@ serviceEndpoints:
     url: "http://payment:3000"
   billSenderService:
     url: "http://billsender:3000"
+  backInventarioService:
+    url: "http://backinventario:3000"
  
 
 policies:
@@ -64,5 +69,23 @@ pipelines:
           action:
             secure: false
             serviceEndpoint: billSenderService
+            changeOrigin: true
+  pipeline_4:
+    apiEndpoints:
+      - api4
+    policies:
+      - proxy:
+          action:
+            secure: false
+            serviceEndpoint: backInventarioService
+            changeOrigin: true
+  pipeline_5:
+    apiEndpoints:
+      - api5
+    policies:
+      - proxy:
+          action:
+            secure: false
+            serviceEndpoint: backInventarioService
             changeOrigin: true
   
