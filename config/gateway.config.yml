@@ -27,16 +27,15 @@ apiEndpoints:
 
 serviceEndpoints:
   backFacturacionService:
-    url: "https://microtech.icu:6969"
+    url: "http://backfacturacion:3000"
   paymentService:
-    url: "https://microtech.icu:8889"
+    url: "http://payment:3000"
   billSenderService:
-    url: "https://microtech.icu:8888"
+    url: "http://billsender:3000"
  
 
 policies:
   - proxy
-  - request-transformer
 
 pipelines:
   pipeline_1:
