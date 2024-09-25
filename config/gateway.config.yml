@@ -37,7 +37,7 @@ serviceEndpoints:
   paymentService:
     url: "http://payment:3000"
   billSenderService:
-    url: "http://billsender:3000"
+    url: "http://microtech.icu:8888"
   backInventarioService:
     url: "http://backinventario:3000"
  
