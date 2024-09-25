@@ -1,5 +1,5 @@
 https:
-  port: 5000
+  port: 443
   tls:
     "*.microtech.icu":
       key: ./certs/privkey.pem
@@ -27,6 +27,9 @@ apiEndpoints:
   api5:
     host: "*"
     paths: "/suppliers/*"
+  api6:
+    host: "*"
+    paths: "/categories/*"
 
 serviceEndpoints:
   backFacturacionService:
@@ -88,4 +91,12 @@ pipelines:
             secure: false
             serviceEndpoint: backInventarioService
             changeOrigin: true
-  
+  pipeline_6:
+    apiEndpoints:
+      - api6
+    policies:
+      - proxy:
+          action:
+            secure: false
+            serviceEndpoint: backInventarioService
+            changeOrigin: true
