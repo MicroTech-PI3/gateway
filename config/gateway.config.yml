@@ -1,5 +1,5 @@
 https:
-  port: 443
+  port: 5000
   tls:
     "*.microtech.icu":
       key: ./certs/privkey.pem
