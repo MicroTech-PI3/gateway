@@ -20,7 +20,7 @@ apiEndpoints:
     paths: "/payment/*"
   api3:
     host: "*"
-    paths: "/billsender/*"
+    paths: "/bill/*"
   api4:
     host: "*"
     paths: "/products/*"
