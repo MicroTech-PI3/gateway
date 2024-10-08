@@ -30,6 +30,9 @@ apiEndpoints:
   api6:
     host: "*"
     paths: "/categories/*"
+  api7:
+    host: "*"
+    paths: "/employees/*"
 
 serviceEndpoints:
   backFacturacionService:
@@ -76,6 +79,7 @@ pipelines:
   pipeline_4:
     apiEndpoints:
       - api4
+      - api7
     policies:
       - proxy:
           action:
