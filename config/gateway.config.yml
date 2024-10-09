@@ -33,6 +33,9 @@ apiEndpoints:
   api7:
     host: "*"
     paths: "/employees/*"
+  api8:
+    host: "*"
+    paths: "/customers/*"
 
 serviceEndpoints:
   backFacturacionService:
@@ -80,6 +83,7 @@ pipelines:
     apiEndpoints:
       - api4
       - api7
+      - api8
     policies:
       - proxy:
           action:
