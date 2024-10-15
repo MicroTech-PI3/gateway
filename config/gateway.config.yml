@@ -36,6 +36,9 @@ apiEndpoints:
   api8:
     host: "*"
     paths: "/customers/*"
+  api9:
+    host: "*"
+    paths: "/kpis/*"
 
 serviceEndpoints:
   backFacturacionService:
@@ -46,6 +49,8 @@ serviceEndpoints:
     url: "http://microtech.icu:8888"
   backInventarioService:
     url: "http://backinventario:3000"
+  backKpisService:
+    url: "http://backkpis:3000"
  
 
 policies:
@@ -107,4 +112,13 @@ pipelines:
           action:
             secure: false
             serviceEndpoint: backInventarioService
+            changeOrigin: true
+  pipeline_7:
+    apiEndpoints:
+      - api9
+    policies:
+      - proxy:
+          action:
+            secure: false
+            serviceEndpoint: backKpisService
             changeOrigin: true
